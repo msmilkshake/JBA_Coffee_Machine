@@ -1,92 +1,101 @@
-<h2>Stage 3/6: Enough coffee for everyone</h2>
+<h2>Stage 4/6: Action!</h2>
 
 <h2>Description</h2>
 
-<p>A real coffee machine never has an infinite supply of water, milk, or coffee beans. And if you input a really big number, it’s almost certain that a real coffee machine wouldn't have the supplies needed to make all that coffee.</p>
+<p>Let's simulate an actual coffee machine. It has a limited supply of water, milk, coffee beans, and disposable cups. Also, it counts how much money it gets for selling coffee. The coffee machine has several options: first, it needs to be able to sell coffee. It can make different varieties of coffee: espresso, latte, and cappuccino. Of course, each variety requires a different amount of supplies, except that all of them requires only one disposable cup. Second, the coffee machine should be able to get replenished by a special worker. Third, another special worker should be able to take money from the coffee machine.</p>
 
-<p>In this stage, you need to improve the previous program. Now you need to input amounts of water, milk, and coffee beans that your coffee machine has at the moment.</p>
+<p>Write the program that can do one of these actions at a time. It reads one line from standard input, which can be "buy", "fill", "take". If you want to buy some coffee, input "buy". If you are a special worker and you think that it is time to fill out all the supplies for the coffee machine, input "fill". If you are another special worker and it is time to take the money from the coffee machine, input "take".</p>
 
-<p>If the coffee machine has enough supplies to make the specified amount of coffee, the program should print "Yes, I can make that amount of coffee". If the coffee machine can make more than that, the program should output "Yes, I can make that amount of coffee (and even N more than that)", where N is the number of additional cups of coffee that the coffee machine can make. If the amount of resources is not enough to make the specified amount of coffee, the program should output "No, I can make only N cup(s) of coffee".</p>
+<p>If the user writes "buy" then he must choose one of three varieties of coffee that the coffee machine can make: espresso, latte, or cappuccino.</p>
 
-<p>Like in the previous stage, the coffee machine needs 200 ml of water, 50 ml of milk, and 15 g of coffee beans to make one cup of coffee.</p>
+<ul>
+	<li>For the espresso, the coffee machine needs 250 ml of water and 16 g of coffee beans. It costs $4.</li>
+	<li>For the latte, the coffee machine needs 350 ml of water, 75 ml of milk, and 20 g of coffee beans. It costs $7.</li>
+	<li>And for the cappuccino, the coffee machine needs 200 ml of water, 100 ml of milk, and 12 g of coffee beans. It costs $6.</li>
+</ul>
+
+<p>If the user writes "fill", the program should ask him how much water, milk, coffee, and how many disposable cups he wants to add to the coffee machine.</p>
+
+<p>If the user writes "take" the program should give him all the money that it earned from selling coffee.</p>
+
+<p>At the moment, the coffee machine has $550, 400 ml of water, 540 ml of milk, 120 g of coffee beans, and 9 disposable cups.</p>
+
+<p>Write the program that prints the coffee machine’s state, processes one query from the user, and also prints the coffee machine’s state after that. Try to use methods to implement every action that the coffee machine can do.</p>
 
 <h2>Instruction</h2>
 
-<p>Write a program that calculates whether it will be able to make the required amount of coffee from the specified amount of ingredients.</p>
+<p>Write a program that offers to buy one cup of coffee or to fill the ingredients or to take its money. At the same time, the program should calculate how many ingredients it has left. And also display the number of ingredients before and after purchase.</p>
 
-<h2>Examples</h2>
+<p><strong style="font-size: 1.5em; text-align: inherit;">Examples</strong></p>
 
-<p>The program should firstly request for water, then milk, then beans, then amount of cups.<br>
+<p>An espresso should be as number 1 in the list, a latte as number 2 and a cappuccino as number 3.<br>
+Options also should be named as "buy", "fill", "take".<br>
 The symbol <code class="java">&gt;</code> represents the user input. Notice that it's not the part of the input.</p>
 
 <p><strong>Example 1</strong></p>
 
-<pre><code class="language-no-highlight">Write how many ml of water the coffee machine has: 
-&gt; 300
-Write how many ml of milk the coffee machine has: 
-&gt; 65
-Write how many grams of coffee beans the coffee machine has: 
-&gt; 100
-Write how many cups of coffee you will need: 
-&gt; 1
-Yes, I can make that amount of coffee</code></pre>
+<pre><code class="language-no-highlight">The coffee machine has:
+400 of water
+540 of milk
+120 of coffee beans
+9 of disposable cups
+550 of money
+
+Write action (buy, fill, take): 
+&gt; buy
+What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino: 
+&gt; 3
+
+The coffee machine has:
+200 of water
+440 of milk
+108 of coffee beans
+8 of disposable cups
+556 of money</code></pre>
 
 <p><strong>Example 2 </strong></p>
 
-<pre><code class="language-no-highlight">Write how many ml of water the coffee machine has: 
+<pre><code class="language-no-highlight">The coffee machine has:
+400 of water
+540 of milk
+120 of coffee beans
+9 of disposable cups
+550 of money
+
+Write action (buy, fill, take): 
+&gt; fill
+Write how many ml of water do you want to add: 
+&gt; 2000
+Write how many ml of milk do you want to add: 
 &gt; 500
-Write how many ml of milk the coffee machine has: 
-&gt; 250
-Write how many grams of coffee beans the coffee machine has: 
-&gt; 200
-Write how many cups of coffee you will need: 
+Write how many grams of coffee beans do you want to add: 
+&gt; 100
+Write how many disposable cups of coffee do you want to add: 
 &gt; 10
-No, I can make only 2 cup(s) of coffee</code></pre>
+
+The coffee machine has:
+2400 of water
+1040 of milk
+220 of coffee beans
+19 of disposable cups
+550 of money</code></pre>
 
 <p><strong>Example 3 </strong></p>
 
-<pre><code class="language-no-highlight">Write how many ml of water the coffee machine has: 
-&gt; 1550
-Write how many ml of milk the coffee machine has: 
-&gt; 299
-Write how many grams of coffee beans the coffee machine has: 
-&gt; 300
-Write how many cups of coffee you will need: 
-&gt; 3
-Yes, I can make that amount of coffee (and even 2 more than that)</code></pre>
+<pre><code class="language-no-highlight">The coffee machine has:
+400 of water
+540 of milk
+120 of coffee beans
+9 of disposable cups
+550 of money
 
-<p><strong>Example 4</strong></p>
+Write action (buy, fill, take): 
+&gt; take
+I gave you $550
 
-<pre><code class="language-no-highlight">Write how many ml of water the coffee machine has: 
-&gt; 0
-Write how many ml of milk the coffee machine has: 
-&gt; 0
-Write how many grams of coffee beans the coffee machine has: 
-&gt; 0
-Write how many cups of coffee you will need: 
-&gt; 1
-No, I can make only 0 cup(s) of coffee</code></pre>
-
-<p><strong>Example 5</strong></p>
-
-<pre><code class="language-no-highlight">Write how many ml of water the coffee machine has: 
-&gt; 0
-Write how many ml of milk the coffee machine has: 
-&gt; 0
-Write how many grams of coffee beans the coffee machine has: 
-&gt; 0
-Write how many cups of coffee you will need: 
-&gt; 0
-Yes, I can make that amount of coffee </code></pre>
-
-<p><strong>Example 6</strong></p>
-
-<pre><code class="language-no-highlight">Write how many ml of water the coffee machine has: 
-&gt; 200
-Write how many ml of milk the coffee machine has: 
-&gt; 50
-Write how many grams of coffee beans the coffee machine has: 
-&gt; 15
-Write how many cups of coffee you will need: 
-&gt; 0
-Yes, I can make that amount of coffee (and even 1 more than that)</code></pre>
+The coffee machine has:
+400 of water
+540 of milk
+120 of coffee beans
+9 of disposable cups
+0 of money</code></pre>
