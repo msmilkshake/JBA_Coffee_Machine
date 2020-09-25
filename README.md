@@ -1,23 +1,36 @@
-<h2>Stage 1/6: Hello, coffee!</h2>
+<h2>Stage 2/6: Machines have needs</h2>
 
 <h2>Description</h2>
 
-<p>Let's start with a program that makes you a coffee – virtual coffee, of course. But in this project, you will implement functionality that simulates a real coffee machine. It can run out of milk, it can run out of coffee beans, it can make different varieties of coffee, and it can take the money for making a coffee.</p>
+<p>Now let's consider a case where you need a lot of coffee. Maybe, for example, you’re hosting a party with a lot of guests. The program should calculate how much water, coffee, and milk are necessary to make the specified amount of coffee. One cup of coffee made on this coffee machine contains 200 ml of water, 50 ml of milk, and 15 g of coffee beans.</p>
 
-<p>The first version of the program just makes you a coffee. It prints to the standard output what it is doing as it makes a coffee.</p>
+<p>The user should input the amount of coffee he needs, in cups, for all the guests.</p>
+
+<p>Of course, all this coffee is not needed right now, so at this stage, the coffee machine doesn’t actually make any coffee.</p>
 
 <h2>Instruction</h2>
 
-<p>Write a program that prints the steps necessary to make coffee.</p>
+<p>Write a program that calculates the amount of ingredients needed to make a certain amount of coffee.</p>
 
-<h2><strong>Example</strong></h2>
+<h2>Examples</h2>
 
-<p>Using the "Hello, World!" program, <strong>write the program </strong>that prints all lines as in the example below.</p>
+<p>The example below shows how your output might look.<br>
+The symbol <code class="java">&gt;</code> represents the user input. Notice that it's not the part of the input.</p>
 
-<pre><code class="language-no-highlight">Starting to make a coffee
-Grinding coffee beans
-Boiling water
-Mixing boiled water with crushed coffee beans
-Pouring coffee into the cup
-Pouring some milk into the cup
-Coffee is ready!</code></pre>
+<p><strong>Example 1</strong></p>
+
+<pre><code class="language-no-highlight">Write how many cups of coffee you will need: 
+&gt; 25
+For 25 cups of coffee you will need:
+5000 ml of water
+1250 ml of milk
+375 g of coffee beans</code></pre>
+
+<p><strong>Example 2 </strong></p>
+
+<pre><code class="language-no-highlight">Write how many cups of coffee you will need: 
+&gt; 125
+For 125 cups of coffee you will need:
+25000 ml of water
+6250 ml of milk
+1875 g of coffee beans</code></pre>
